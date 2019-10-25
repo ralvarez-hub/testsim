@@ -14,7 +14,7 @@ then
 # indexo genoma de Ecoli
     echo "Running STAR index..."
     mkdir -p res/genome/star_index
-    STAR --runThreadN 4 --runMode genomeGenerate --genomeDir res/genome/star_index/ --genomeFastaFiles res/genome/ecoli.fasta$
+    STAR --runThreadN 4 --runMode genomeGenerate --genomeDir res/genome/star_index/ --genomeFastaFiles res/genome/ecoli.fasta
     echo
 
 # proceso secuencias de manera iterativa
