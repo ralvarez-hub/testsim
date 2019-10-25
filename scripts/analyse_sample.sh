@@ -1,3 +1,18 @@
+# Defino el WD
+WD=$(/home/user16/Desktop/testsim/testsim)
+cd $WD
+
+# Descargar genoma Ecoli
+mkdir res/genome
+cd $_
+wget -O ecoli.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
+gunzip -k ecoli.fasta.gz
+
+# Compruebo calidad secuencias
+
+
+
+
 if [ "$#" -eq 1 ]
 then
     sampleid=$1
