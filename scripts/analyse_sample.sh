@@ -9,8 +9,9 @@ wget -O ecoli.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GC
 gunzip -k ecoli.fasta.gz
 
 # Compruebo calidad secuencias
-
-
+cd $WD
+mkdir out/fastqc
+fastqc -o out/fastqc data/*.fastq.gz
 
 
 if [ "$#" -eq 1 ]
