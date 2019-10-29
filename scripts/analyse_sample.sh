@@ -4,7 +4,6 @@ cd $WD
 
 if [ "$#" -eq 1 ]
 then
-    sampleid=$1
 
 # descargo genoma Ecoli
     mkdir res/genome
