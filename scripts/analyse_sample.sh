@@ -1,19 +1,19 @@
-# defino WD
+# defining WD
 WD="/home/user16/Desktop/testsim/testsim"
 cd $WD
 
-# descargo genoma Ecoli
+# downloading Ecoli genome
 mkdir -p res/genome
 wget -O res/genome/ecoli.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
 gunzip -k res/genome/ecoli.fasta.gz
 
-# indexo genoma de Ecoli
+# indexing Ecoli genome
 echo "Running STAR index..."
 mkdir -p res/genome/star_index
 STAR --runThreadN 4 --runMode genomeGenerate --genomeDir res/genome/star_index/ --genomeFastaFiles res/genome/ecoli.fasta
 echo
 
-# proceso secuencias de manera iterativa
+# analysing multiple sequences
 for sampleid in $(ls data/*.fastq.gz | cut -d"_" -f1 | cut -d"/" -f2 | sort |uniq)
 do
     echo "Running FastQC..."
