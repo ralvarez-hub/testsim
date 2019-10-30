@@ -2,11 +2,12 @@
 WD="/home/user16/Desktop/testsim/testsim"
 cd $WD
 
+# comprobacion de orden correcta
 if [ "$#" -eq 1 ]
 then
 
 # descargo genoma Ecoli
-    mkdir res/genome
+    mkdir -p res/genome
     wget -O res/genome/ecoli.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.fna.gz
     gunzip -k res/genome/ecoli.fasta.gz
 
